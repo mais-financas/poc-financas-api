@@ -28,11 +28,12 @@ Antes de começar, certifique-se de ter os seguintes pré-requisitos instalados 
 
 - **JDK (Java Development Kit)**: É necessário ter o JDK instalado para compilar e executar o projeto. Recomenda-se o
   uso do JDK 8 ou superior.
+- **Docker**: É necessário possuir o docker instalado para executar a aplicação em ambiente local. Aqui está um guia de instalação
 
 ### Clone o projeto
 
 ```shell
-git clone https://github.com/maisfinancas/poc-financas-api
+git clone https://github.com/maisfianancas/poc-financas-api.git
 ```
 
 ### Entre no diretório do projeto
@@ -168,7 +169,7 @@ GET /api/gestores/{id}/despesas
 
 #### Resposta do Servidor
 
-- Código de status: 201 CREATED
+- Código de status: 200 OK
 - Formato da resposta: application/json
 - Exemplo de resposta:
 
