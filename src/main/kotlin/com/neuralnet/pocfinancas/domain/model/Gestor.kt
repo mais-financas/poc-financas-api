@@ -22,6 +22,7 @@ data class Gestor(
     @JsonIgnore
     val password: String,
 
+    @JsonIgnore
     @OneToMany(
         mappedBy = "gestor", cascade = [CascadeType.ALL]
     )

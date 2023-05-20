@@ -9,7 +9,7 @@ Este repositório contém uma prova de conceito (PoC) para validação dos segui
 
 A aplicação utiliza como exemplo endpoints para o controle de despesas pessoais.
 
--- Tecnologias e Ferramentas
+## Tecnologias e Ferramentas
 
 A PoC foi desenvolvida utilizando as seguintes tecnologias:
 
@@ -32,73 +32,159 @@ Antes de começar, certifique-se de ter os seguintes pré-requisitos instalados 
 ### Clone o projeto
 
 ```shell
-  git clone https://github.com/maisfinancas/poc-financas-api
+git clone https://github.com/maisfinancas/poc-financas-api
 ```
 
 ### Entre no diretório do projeto
 
 ```shell
-  cd poc-financas-api
+cd poc-financas-api
 ```
 
 ### Execute o comando
 
 ```shell
-  ./gradlew bootRun
+./gradlew bootRun
 ```
 
 ## API Reference
 
 Os principais endpoints para verificação do projeto são os seguintes.
 
-#### Adicionar Gestor
-
-```http
-  Post /api/gestores
-```
-
-#### Adicionar Gestor
-
-```http
-  POST /api/gestores
-```
+### Adicionar Gestor
 
 Adiciona um gestor ao sistema.
 
+```http
+POST /api/gestores
+```
+
+#### Corpo da requisição - Exemplo
+
+```json
+{
+  "nome": "Exemplo",
+  "email": "email@exemplo.com",
+  "senha": "senha123"
+}
+```
+
+#### Resposta do Servidor
+
+- Código de status: 201 CREATED
+- Formato da resposta: application/json
+- Exemplo de resposta:
+
+```json
+{
+  "id": "39b4fe9e-9e3b-4cdb-b7d5-53b894f0798e",
+  "nome": "Exemplo",
+  "email": "email@exemplo.com"
+}
+```
+
 ---
 
-#### Listar Gestores
+### Listar Gestores
 
 ```http
-  GET /api/gestores/{id}
+GET /api/gestores
 ```
 
 Lista os gestores do sistema.
+#### Resposta do Servidor
+
+- Código de status: 200 OK
+- Formato da resposta: application/json
+- Exemplo de resposta:
+
+```json
+[
+  {
+    "id": "08afeda9-a1bc-4649-aa04-0c2ca6899ca2",
+    "nome": "Exemplo",
+    "email": "email@exemplo.com"
+  },
+  {
+    "id": "39b4fe9e-9e3b-4cdb-b7d5-53b894f0798e",
+    "nome": "fulano",
+    "email": "fulano@exemplo.com"
+  }
+]
+```
 
 ---
 
-#### Adicionar Despesa
+### Adicionar Despesa
 
 ```http
-  POST /api/gestores/{id}/despesas
+POST /api/gestores/{id}/despesas
 ```
 
 | Parâmetro | Descrição              |
 |:----------|:-----------------------|
-| `id`      | Id do Gestor procurado |
+| `id`      | id do gestor procurado |
 
 Adiciona uma despesa ao gestor especificado.
 
+
+#### Corpo da requisição - Exemplo
+
+```json
+{
+  "nome": "Netflix",
+  "valor": 39.90
+}
+```
+
+#### Resposta do Servidor
+
+- Código de status: 201 CREATED
+- Formato da resposta: application/json
+- Exemplo de resposta:
+
+```json
+{
+  "id": 1,
+  "nome": "Netflix",
+  "valor": 39.90,
+  "gestor_id": "39b4fe9e-9e3b-4cdb-b7d5-53b894f0798e"
+}
+```
+
 ---
 
-#### Listar Despesas de um Gestor
+### Listar Despesas de um Gestor
+
+Retorna as despesas do gestor especificado.
 
 ```http
-  GET /api/gestores/{id}/despesas
+GET /api/gestores/{id}/despesas
 ```
 
 | Parâmetro | Descrição              |
 |:----------|:-----------------------|
-| `id`      | Id do Gestor procurado |
+| `id`      | id do gestor procurado |
 
-Retorna as despesas do gestor especificado.
+#### Resposta do Servidor
+
+- Código de status: 201 CREATED
+- Formato da resposta: application/json
+- Exemplo de resposta:
+
+```json
+[
+  {
+    "id": 1,
+    "nome": "Netflix",
+    "valor": 39.90,
+    "gestor_id": "39b4fe9e-9e3b-4cdb-b7d5-53b894f0798e"
+  },
+  {
+    "id": 2,
+    "nome": "Cinema",
+    "valor": 28.50,
+    "gestor_id": "39b4fe9e-9e3b-4cdb-b7d5-53b894f0798e"
+  }
+]
+```
