@@ -3,11 +3,12 @@ package com.neuralnet.pocfinancas.api.model
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.neuralnet.pocfinancas.domain.model.Despesa
 import java.math.BigDecimal
-import java.util.*
+import java.util.UUID
 
 data class DespesaModel(
     val id: Long?,
     val nome: String,
+    val categoria: String,
     val valor: BigDecimal,
     @JsonProperty(value = "gestor_id") val gestorId: UUID?
 )
@@ -17,5 +18,6 @@ fun Despesa.toModel(): DespesaModel =
         id = id,
         nome = nome,
         valor = valor,
-        gestorId = gestor.id
+        categoria = categoria,
+        gestorId = gestor.id,
     )
