@@ -1,0 +1,3 @@
+INSERT INTO gestor VALUES (RANDOM_UUID(), 'José')
+INSERT INTO gestor VALUES (RANDOM_UUID(), 'Maria')
+INSERT INTO gestor VALUES (RANDOM_UUID(), 'Augusto')

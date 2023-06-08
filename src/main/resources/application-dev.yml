@@ -2,7 +2,7 @@ spring:
   datasource:
     username: postgres
     password: password
-    url: jdbc:postgres://localhost:5432/financas_db
+    url: jdbc:postgresql://localhost:5432/financas_db
   docker:
     compose:
       enabled: true

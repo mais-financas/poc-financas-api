@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: h2
   docker:
     compose:
       enabled: false
