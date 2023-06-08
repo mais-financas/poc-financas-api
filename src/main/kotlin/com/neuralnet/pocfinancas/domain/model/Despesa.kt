@@ -18,6 +18,8 @@ data class Despesa(
 
     val valor: BigDecimal,
 
+    val categoria: String,
+
     @JsonIgnore
     @ManyToOne
     val gestor: Gestor,

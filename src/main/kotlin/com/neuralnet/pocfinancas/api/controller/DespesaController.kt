@@ -32,6 +32,7 @@ class DespesaController(
                 val despesa = Despesa(
                     nome = despesaInput.nome,
                     valor = despesaInput.valor,
+                    categoria = despesaInput.categoria,
                     gestor = gestor
                 ).let { despesaRepository.save(it) }
 
