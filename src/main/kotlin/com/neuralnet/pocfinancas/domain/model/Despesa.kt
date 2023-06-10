@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.ManyToOne
 import java.math.BigDecimal
+import java.util.Date
 
 @Entity
 data class Despesa(
@@ -23,4 +24,6 @@ data class Despesa(
     @JsonIgnore
     @ManyToOne
     val gestor: Gestor,
+
+    val data: Date,
 )

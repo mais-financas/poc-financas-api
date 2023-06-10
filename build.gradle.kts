@@ -40,5 +40,7 @@ tasks.withType<Test> {
 }
 
 tasks.bootRun {
-	environment(mapOf("SPRING_PROFILES_ACTIVE" to "dev"))
+	val profile = project.findProperty("profile")?.toString() ?: "dev"
+
+	environment(mapOf("SPRING_PROFILES_ACTIVE" to profile))
 }

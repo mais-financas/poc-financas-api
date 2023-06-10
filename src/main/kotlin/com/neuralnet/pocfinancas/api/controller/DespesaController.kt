@@ -33,7 +33,8 @@ class DespesaController(
                     nome = despesaInput.nome,
                     valor = despesaInput.valor,
                     categoria = despesaInput.categoria,
-                    gestor = gestor
+                    gestor = gestor,
+                    data = despesaInput.data
                 ).let { despesaRepository.save(it) }
 
                 ResponseEntity.ok(despesa.toModel())

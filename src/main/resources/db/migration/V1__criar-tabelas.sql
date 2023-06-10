@@ -1,5 +1,5 @@
 CREATE TABLE gestor (
-	id uuid PRIMARY KEY,
+	id uuid PRIMARY KEY NOT NULL,
 	nome TEXT NOT NULL,
 	email TEXT NOT NULL,
 	password TEXT NOT NULL
