@@ -42,7 +42,7 @@ class GestorController(
     fun delete(@PathVariable gestorId: UUID): ResponseEntity<Unit> {
         val gestorExiste = gestorRepository.existsById(gestorId)
 
-        if (gestorExiste) {
+        if (!gestorExiste) {
             return ResponseEntity.notFound().build()
         }
 
