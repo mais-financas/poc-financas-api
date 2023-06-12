@@ -10,3 +10,8 @@ services:
       POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: financas_db
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+volumes:
+  pg_data:
+    driver: local
