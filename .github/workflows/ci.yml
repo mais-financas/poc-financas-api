@@ -38,5 +38,5 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USER }}/poc-api:v{{ GITHUB_RUN_NUMBER }}
             ${{ secrets.DOCKERHUB_USER }}/poc-api:latest
+            ${{ secrets.DOCKERHUB_USER }}/poc-api:v${{ GITHUB_RUN_NUMBER }}
