@@ -17,3 +17,13 @@ CREATE TABLE IF NOT EXISTS despesa (
 	FOREIGN KEY(gestor_id) REFERENCES gestor(id)
 	ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS objetivo (
+    id serial PRIMARY KEY,
+    nome TEXT NOT NULL,
+    prazo_estimado DATE NOT NULL,
+    gestor_id uuid NOT NULL,
+
+	FOREIGN KEY(gestor_id) REFERENCES gestor(id)
+	ON DELETE CASCADE
+);

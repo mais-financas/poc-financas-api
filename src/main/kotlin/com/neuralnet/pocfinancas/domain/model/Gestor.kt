@@ -7,7 +7,7 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.OneToMany
-import java.util.*
+import java.util.UUID
 
 @Entity
 data class Gestor(
@@ -26,5 +26,11 @@ data class Gestor(
     @OneToMany(
         mappedBy = "gestor", cascade = [CascadeType.ALL]
     )
-    val despesas: MutableList<Despesa> = mutableListOf()
+    val despesas: MutableList<Despesa> = mutableListOf(),
+
+    @JsonIgnore
+    @OneToMany(
+        mappedBy = "gestor", cascade = [CascadeType.ALL]
+    )
+    val objetivos: MutableList<Objetivo> = mutableListOf()
 )
